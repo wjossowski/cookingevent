@@ -1,5 +1,6 @@
 package it.avanscoperta.cookingevent.menu.domain;
 
+import it.avanscoperta.cookingevent.user.builders.UserBuilder;
 import it.avanscoperta.cookingevent.user.domain.User;
 import org.axonframework.test.aggregate.AggregateTestFixture;
 import org.axonframework.test.aggregate.FixtureConfiguration;
@@ -19,7 +20,7 @@ public class MenuTest {
     @BeforeEach
     public void setup() {
         titolo = "Digiuno tra amici";
-        user = new User();
+        user = new UserBuilder().build();
         menuId = MenuId.generate();
 
         creaMenu = new CreaMenu(
